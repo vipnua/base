@@ -5,7 +5,7 @@ import instance from './instance';
 export const getProducts = async (): Promise<IProduct[]> => {
     return await instance.get('/products');
 }
-export const getProduct = async (id: number) => {
+export const getProduct = async (id: number): Promise<IProduct> => {
     return await instance.get(`/products/${id}`);
 }
 export const addProduct = async (product: IProduct) => {

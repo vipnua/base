@@ -1,8 +1,14 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { getProducts } from '../api/product';
+import { getProducts, getProduct } from '../api/product';
 import { IProduct } from '../interfaces/product';
 
 export const fetchProducts = createAsyncThunk("products/fetchProducts", getProducts);
+export const fetchProduct = createAsyncThunk("products/fetchProduct", async (id: string) => {
+    console.log('id', id)
+    const product = await getProduct(1);
+    return product;
+});
+
 
 const initialState: { value: IProduct[] } = {
     value: []
