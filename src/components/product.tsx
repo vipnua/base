@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hook";
 import { fetchProducts } from "../slice/product";
 
@@ -12,6 +13,7 @@ const Product = (props: Props) => {
     }, []);
     return (
         <div>
+            <Link to="/admin/products/add">Add</Link>
             {products.map((product) => (
                 <div key={product.id}>{product.name}</div>
             ))}
