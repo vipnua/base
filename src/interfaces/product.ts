@@ -1,5 +1,7 @@
 export interface IProduct {
     id?: number;
+    email:string;
     name: string;
-    price: number
+    price: number;
+    quantity: string;
 }
